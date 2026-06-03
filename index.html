@@ -1,53 +1,283 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Pooja Patel Projects</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Pooja Patel | Project Showcase</title>
+
   <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
     body{
-      font-family: Arial;
-      background:#f4f4f4;
-      padding:40px;
+      background:#f4f7fb;
+      color:#222;
+      padding:40px 20px;
+      line-height:1.6;
     }
+
+    .container{
+      max-width:1100px;
+      margin:auto;
+    }
+
+    .header{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .header h1{
+      font-size:3rem;
+      margin-bottom:10px;
+      color:#0f172a;
+    }
+
+    .header span{
+      color:#14b8a6;
+    }
+
+    .header p{
+      color:#64748b;
+      font-size:1.1rem;
+    }
+
+    .projects{
+      display:grid;
+      gap:25px;
+    }
+
     .card{
-      background:white;
-      padding:20px;
-      margin-bottom:20px;
-      border-radius:10px;
-      box-shadow:0 2px 10px rgba(0,0,0,0.1);
+      background:#fff;
+      border-radius:18px;
+      padding:25px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.08);
+      transition:0.3s ease;
+      border:1px solid #e2e8f0;
     }
-    a{
-      color:blue;
+
+    .card:hover{
+      transform:translateY(-5px);
+      border-color:#14b8a6;
+      box-shadow:0 12px 30px rgba(20,184,166,0.15);
+    }
+
+    .card h2{
+      margin-bottom:15px;
+      color:#0f172a;
+    }
+
+    .card p{
+      color:#475569;
+      margin-bottom:15px;
+    }
+
+    .tech-stack{
+      margin-bottom:20px;
+    }
+
+    .tech-stack span{
+      display:inline-block;
+      background:#ecfeff;
+      color:#0f766e;
+      padding:6px 12px;
+      border-radius:20px;
+      font-size:14px;
+      margin:4px;
+      font-weight:500;
+    }
+
+    .buttons{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:10px 18px;
+      border-radius:10px;
       text-decoration:none;
+      font-weight:600;
+      transition:.3s;
+    }
+
+    .live{
+      background:#14b8a6;
+      color:white;
+    }
+
+    .github{
+      border:1px solid #14b8a6;
+      color:#14b8a6;
+    }
+
+    .live:hover{
+      background:#0f766e;
+    }
+
+    .github:hover{
+      background:#14b8a6;
+      color:white;
+    }
+
+    footer{
+      margin-top:50px;
+      text-align:center;
+      color:#64748b;
+      font-size:14px;
+    }
+
+    @media(max-width:768px){
+      .header h1{
+        font-size:2.2rem;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<h1>Pooja Patel - Projects</h1>
+  <div class="container">
 
-<div class="card">
-  <h2>1.  Portfolio Website</h2>
-  <p>Personal portfolio website.</p>
-  <a href="https://react-portfolio-poojapatel.vercel.app/">Live Demo</a>
-</div>
+    <div class="header">
+      <h1>Pooja <span>Patel</span></h1>
+      <p>
+        Front-End Developer | React.js Developer | MERN Stack Developer
+      </p>
+    </div>
 
-<div class="card">
-  <h2>2. Employee Management System (Redux Builder)</h2>
-  <p>Employee Management System CRUD Operation</p>
-  <a href="https://github.com/Pooja23494/PR10-Redux-Builder">Github Link</a>
-</div>
+    <div class="projects">
 
-<div class="card">
-  <h2>3. Shivaji Good Poha</h2>
-  <p>Promotional Website.</p>
-  <a href="https://www.shivajigoodpoha.com/">Live Demo</a>
-</div>
+      <!-- QuickShow -->
+      <div class="card">
+        <h2>🎬 QuickShow – Movie Ticket Booking Platform</h2>
 
-<div class="card">
-  <h2>4. JavaScript Mini Projects Collection</h2>
-  <p>Product Management CRUD Operation.</p>
-  <a href="https://java-script-practical-exam-pooja.vercel.app/">Live Demo</a>
-</div>
+        <p>
+          Developed a full-stack movie ticket booking platform with secure
+          user authentication and role-based access control. Implemented movie
+          browsing, seat selection, booking management, and Stripe payment
+          integration for seamless ticket reservations. Built a responsive
+          admin dashboard to manage movies, shows, users, and bookings efficiently.
+        </p>
+
+        <div class="tech-stack">
+          <span>React.js</span>
+          <span>Node.js</span>
+          <span>Express.js</span>
+          <span>MongoDB</span>
+          <span>Stripe</span>
+          <span>Tailwind CSS</span>
+        </div>
+
+        <div class="buttons">
+          <a
+            href="https://quickshow-omega-blush.vercel.app"
+            target="_blank"
+            class="btn live"
+          >
+            Live Demo
+          </a>
+
+          <a
+            href="https://github.com/Pooja23494/QuickShow"
+            target="_blank"
+            class="btn github"
+          >
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- MERN Ecommerce -->
+      <div class="card">
+        <h2>🛒 MERN E-Commerce Platform</h2>
+
+        <p>
+          Built a full-stack e-commerce application featuring JWT authentication,
+          product catalogue management, and order processing. Developed shopping
+          cart, checkout workflow, and Redux Toolkit state management for enhanced
+          user experience. Created an admin dashboard for managing products,
+          categories, users, and orders with responsive UI design.
+        </p>
+
+        <div class="tech-stack">
+          <span>React.js</span>
+          <span>Node.js</span>
+          <span>Express.js</span>
+          <span>MongoDB</span>
+          <span>Redux Toolkit</span>
+          <span>Tailwind CSS</span>
+        </div>
+
+        <div class="buttons">
+          <a
+            href="https://mern-ecommerce-pooja.vercel.app"
+            target="_blank"
+            class="btn live"
+          >
+            Live Demo
+          </a>
+
+          <a
+            href="https://github.com/Pooja23494/mern-ecommerce"
+            target="_blank"
+            class="btn github"
+          >
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Shivaji Good Poha -->
+      <div class="card">
+        <h2>🌾 Shivaji Good Poha – Business Website</h2>
+
+        <p>
+          Designed and developed a modern business website to strengthen
+          brand visibility and showcase products online. Implemented a
+          mobile-first responsive interface with optimized performance,
+          accessibility, and cross-browser compatibility. Delivered a
+          professional user experience using clean UI design and structured
+          content presentation.
+        </p>
+
+        <div class="tech-stack">
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>JavaScript</span>
+          <span>Bootstrap 5</span>
+        </div>
+
+        <div class="buttons">
+          <a
+            href="https://www.shivajigoodpoha.com/"
+            target="_blank"
+            class="btn live"
+          >
+            Live Demo
+          </a>
+
+          <a
+            href="https://github.com/Pooja23494/Shivajigoodpoha"
+            target="_blank"
+            class="btn github"
+          >
+            GitHub
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <footer>
+      © 2026 Pooja Patel • Front-End Developer • React.js Developer
+    </footer>
+
+  </div>
 
 </body>
 </html>
