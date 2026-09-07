@@ -1,319 +1,618 @@
 <!doctype html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Pooja Patel | Project Showcase</title>
+```
+<meta
+  name="description"
+  content="Pooja Patel - Front-End Developer, React.js Developer and MERN Stack Developer. Explore my web development projects."
+/>
 
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Segoe UI", sans-serif;
-      }
+<meta
+  name="keywords"
+  content="Pooja Patel, Front-End Developer, React Developer, MERN Developer, JavaScript, Portfolio, Web Developer"
+/>
 
-      body {
-        background: #f4f7fb;
-        color: #222;
-        padding: 40px 20px;
-        line-height: 1.6;
-      }
+<meta name="author" content="Pooja Patel" />
 
-      .container {
-        max-width: 1100px;
-        margin: auto;
-      }
+<title>Pooja Patel | Project Showcase</title>
 
-      .header {
-        text-align: center;
-        margin-bottom: 50px;
-      }
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
 
-      .header h1 {
-        font-size: 3rem;
-        margin-bottom: 10px;
-        color: #0f172a;
-      }
+  html {
+    scroll-behavior: smooth;
+  }
 
-      .header span {
-        color: #14b8a6;
-      }
+  body {
+    min-height: 100vh;
+    background:
+      radial-gradient(
+        circle at top left,
+        rgba(20, 184, 166, 0.08),
+        transparent 35%
+      ),
+      radial-gradient(
+        circle at bottom right,
+        rgba(15, 118, 110, 0.06),
+        transparent 35%
+      ),
+      #f4f7fb;
+    color: #1e293b;
+    padding: 50px 20px 30px;
+    line-height: 1.6;
+  }
 
-      .header p {
-        color: #64748b;
-        font-size: 1.1rem;
-      }
+  .container {
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+  }
 
-      .projects {
-        display: grid;
-        gap: 25px;
-      }
+  /* =========================
+     Header
+  ========================= */
 
-      .card {
-        background: #fff;
-        border-radius: 18px;
-        padding: 25px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-        transition: 0.3s ease;
-        border: 1px solid #e2e8f0;
-      }
+  .header {
+    text-align: center;
+    margin-bottom: 55px;
+  }
 
-      .card:hover {
-        transform: translateY(-5px);
-        border-color: #14b8a6;
-        box-shadow: 0 12px 30px rgba(20, 184, 166, 0.15);
-      }
+  .badge {
+    display: inline-block;
+    padding: 7px 15px;
+    margin-bottom: 15px;
+    border-radius: 30px;
+    background: #ecfeff;
+    border: 1px solid #ccfbf1;
+    color: #0f766e;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
 
-      .card h2 {
-        margin-bottom: 15px;
-        color: #0f172a;
-      }
+  .header h1 {
+    color: #0f172a;
+    font-size: clamp(2.3rem, 6vw, 3.8rem);
+    line-height: 1.1;
+    margin-bottom: 14px;
+    font-weight: 800;
+  }
 
-      .card p {
-        color: #475569;
-        margin-bottom: 15px;
-      }
+  .header h1 span {
+    color: #14b8a6;
+  }
 
-      .tech-stack {
-        margin-bottom: 20px;
-      }
+  .header p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #64748b;
+    font-size: 1.05rem;
+  }
 
-      .tech-stack span {
-        display: inline-block;
-        background: #ecfeff;
-        color: #0f766e;
-        padding: 6px 12px;
-        border-radius: 20px;
-        font-size: 14px;
-        margin: 4px;
-        font-weight: 500;
-      }
+  .header-line {
+    width: 70px;
+    height: 4px;
+    margin: 20px auto 0;
+    border-radius: 10px;
+    background: #14b8a6;
+  }
 
-      .buttons {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-      }
+  /* =========================
+     Projects Grid
+  ========================= */
 
-      .btn {
-        padding: 10px 18px;
-        border-radius: 10px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: 0.3s;
-      }
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+  }
 
-      .live {
-        background: #14b8a6;
-        color: white;
-      }
+  /* =========================
+     Project Card
+  ========================= */
 
-      .github {
-        border: 1px solid #14b8a6;
-        color: #14b8a6;
-      }
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      border-color 0.3s ease;
+    overflow: hidden;
+  }
 
-      .live:hover {
-        background: #0f766e;
-      }
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #14b8a6;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
 
-      .github:hover {
-        background: #14b8a6;
-        color: white;
-      }
+  .card:hover {
+    transform: translateY(-7px);
+    border-color: #5eead4;
+    box-shadow: 0 18px 40px rgba(20, 184, 166, 0.13);
+  }
 
-      footer {
-        margin-top: 50px;
-        text-align: center;
-        color: #64748b;
-        font-size: 14px;
-      }
+  .card:hover::before {
+    transform: scaleX(1);
+  }
 
-      @media (max-width: 768px) {
-        .header h1 {
-          font-size: 2.2rem;
-        }
-      }
-    </style>
+  /* =========================
+     Card Header
+  ========================= */
+
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 16px;
+  }
+
+  .project-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: #ecfeff;
+    border: 1px solid #ccfbf1;
+    font-size: 22px;
+  }
+
+  .project-number {
+    color: #94a3b8;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .card h2 {
+    color: #0f172a;
+    font-size: 1.35rem;
+    line-height: 1.35;
+    margin-bottom: 12px;
+  }
+
+  .card p {
+    color: #475569;
+    font-size: 15px;
+    margin-bottom: 22px;
+  }
+
+  /* =========================
+     Tech Stack
+  ========================= */
+
+  .tech-title {
+    color: #334155;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+  }
+
+  .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 24px;
+  }
+
+  .tech-stack span {
+    display: inline-block;
+    background: #f0fdfa;
+    color: #0f766e;
+    border: 1px solid #ccfbf1;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  /* =========================
+     Buttons
+  ========================= */
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: auto;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 42px;
+    padding: 9px 17px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    transition:
+      background 0.25s ease,
+      color 0.25s ease,
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .live {
+    background: #14b8a6;
+    color: #ffffff;
+    box-shadow: 0 5px 15px rgba(20, 184, 166, 0.2);
+  }
+
+  .live:hover {
+    background: #0f766e;
+    box-shadow: 0 8px 20px rgba(20, 184, 166, 0.28);
+  }
+
+  .github {
+    background: #ffffff;
+    border: 1px solid #14b8a6;
+    color: #0f766e;
+  }
+
+  .github:hover {
+    background: #14b8a6;
+    color: #ffffff;
+  }
+
+  /* =========================
+     Footer
+  ========================= */
+
+  footer {
+    margin-top: 55px;
+    padding-top: 25px;
+    border-top: 1px solid #e2e8f0;
+    text-align: center;
+    color: #64748b;
+    font-size: 14px;
+  }
+
+  footer strong {
+    color: #0f766e;
+  }
+
+  /* =========================
+     Responsive
+  ========================= */
+
+  @media (max-width: 850px) {
+    .projects {
+      grid-template-columns: 1fr;
+    }
+
+    .card {
+      padding: 25px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    body {
+      padding: 35px 15px 25px;
+    }
+
+    .header {
+      margin-bottom: 40px;
+    }
+
+    .header h1 {
+      font-size: 2.4rem;
+    }
+
+    .header p {
+      font-size: 0.95rem;
+    }
+
+    .projects {
+      gap: 18px;
+    }
+
+    .card {
+      padding: 21px;
+      border-radius: 17px;
+    }
+
+    .card h2 {
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      font-size: 14px;
+    }
+
+    .buttons {
+      flex-direction: column;
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
+</style>
+```
+
   </head>
 
   <body>
-    <div class="container">
-      <div class="header">
-        <h1>Pooja <span>Patel</span></h1>
-        <p>Front-End Developer | React.js Developer | MERN Stack Developer</p>
+    <main class="container">
+
+```
+  <!-- =========================
+       Header
+  ========================== -->
+
+  <header class="header">
+    <div class="badge">🚀 My Development Projects</div>
+
+    <h1>
+      Pooja <span>Patel</span>
+    </h1>
+
+    <p>
+      Front-End Developer | React.js Developer | MERN Stack Developer
+    </p>
+
+    <div class="header-line"></div>
+  </header>
+
+  <!-- =========================
+       Projects
+  ========================== -->
+
+  <section class="projects">
+
+    <!-- Portfolio Website -->
+
+    <article class="card">
+      <div class="card-header">
+        <div class="project-icon">🌐</div>
+        <div class="project-number">PROJECT 01</div>
       </div>
 
-      <div class="projects">
-        <!-- Portfolio Website -->
-        <div class="card">
-          <h2>🌐 Personal Portfolio Website</h2>
+      <h2>Personal Portfolio Website</h2>
 
-          <p>
-            Designed and developed a modern portfolio website to showcase my
-            projects, certifications, technical skills, and professional
-            profile. Implemented responsive design, dark mode support, SEO
-            optimization, contact form integration, and smooth user experience
-            across all devices.
-          </p>
+      <p>
+        Designed and developed a modern portfolio website to showcase my
+        projects, certifications, technical skills, and professional
+        profile. Implemented responsive design, dark mode support, SEO
+        optimization, contact form integration, and a smooth user
+        experience across all devices.
+      </p>
 
-          <div class="tech-stack">
-            <span>React.js</span>
-            <span>JavaScript</span>
-            <span>Tailwind CSS</span>
-            <span>Vite</span>
-            <span>FormSubmit</span>
-            <span>Vercel</span>
-          </div>
+      <div class="tech-title">Tech Stack</div>
 
-          <div class="buttons">
-            <a
-              href="https://react-portfolio-poojapatel.vercel.app"
-              target="_blank"
-              class="btn live"
-            >
-              Live Demo
-            </a>
-
-            <a
-              href="https://github.com/Pooja23494"
-              target="_blank"
-              class="btn github"
-            >
-              GitHub
-            </a>
-          </div>
-        </div>
-
-        <!-- Shivaji Good Poha -->
-        <div class="card">
-          <h2>🌾 Shivaji Good Poha – Business Website</h2>
-
-          <p>
-            Designed and developed a modern business website to strengthen brand
-            visibility and showcase products online. Implemented a mobile-first
-            responsive interface with optimized performance, accessibility, and
-            cross-browser compatibility. Delivered a professional user
-            experience using clean UI design and structured content
-            presentation.
-          </p>
-
-          <div class="tech-stack">
-            <span>React js.</span>
-            <span>JavaScript</span>
-            <span>Tailwind CSS</span>
-            <span>React Router</span>
-            <span>Framer Motion</span>
-            <span>Swiper</span>
-            <span>EmailJS</span>
-          </div>
-
-          <div class="buttons">
-            <a
-              href="https://www.shivajigoodpoha.com/"
-              target="_blank"
-              class="btn live"
-            >
-              Live Demo
-            </a>
-
-            <a
-              href="https://github.com/Pooja23494/Shivajigoodpoha"
-              target="_blank"
-              class="btn github"
-            >
-              GitHub
-            </a>
-          </div>
-        </div>
+      <div class="tech-stack">
+        <span>React.js</span>
+        <span>JavaScript</span>
+        <span>Tailwind CSS</span>
+        <span>Vite</span>
+        <span>FormSubmit</span>
+        <span>Vercel</span>
       </div>
-      
-        <!-- QuickShow -->
-        <div class="card">
-          <h2>🎬 QuickShow – Movie Ticket Booking Platform</h2>
-          <p>
-            Developed a full-stack movie ticket booking platform with secure
-            user authentication and role-based access control. Implemented movie
-            browsing, seat selection, booking management, and Stripe payment
-            integration for seamless ticket reservations. Built a responsive
-            admin dashboard to manage movies, shows, users, and bookings
-            efficiently.
-          </p>
 
-          <div class="tech-stack">
-            <span>React.js</span>
-            <span>Node.js</span>
-            <span>Express.js</span>
-            <span>MongoDB</span>
-            <span>Stripe</span>
-            <span>Tailwind CSS</span>
-          </div>
+      <div class="buttons">
+        <a
+          href="https://react-portfolio-poojapatel.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn live"
+        >
+          🔗 Live Demo
+        </a>
 
-          <div class="buttons">
-            <a
-              href="https://quickshow-omega-blush.vercel.app"
-              target="_blank"
-              class="btn live"
-            >
-              Live Demo
-            </a>
+        <a
+          href="https://github.com/Pooja23494"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn github"
+        >
+          💻 GitHub
+        </a>
+      </div>
+    </article>
 
-            <a
-              href="https://github.com/Pooja23494/QuickShow"
-              target="_blank"
-              class="btn github"
-            >
-              GitHub
-            </a>
-          </div>
-        </div>
+    <!-- Shivaji Good Poha -->
 
-        <!-- MERN Ecommerce -->
-        <div class="card">
-          <h2>🛒 MERN E-Commerce Platform</h2>
+    <article class="card">
+      <div class="card-header">
+        <div class="project-icon">🌾</div>
+        <div class="project-number">PROJECT 02</div>
+      </div>
 
-          <p>
-            Built a full-stack e-commerce application featuring JWT
-            authentication, product catalogue management, and order processing.
-            Developed shopping cart, checkout workflow, and Redux Toolkit state
-            management for enhanced user experience. Created an admin dashboard
-            for managing products, categories, users, and orders with responsive
-            UI design.
-          </p>
+      <h2>Shivaji Good Poha – Business Website</h2>
 
-          <div class="tech-stack">
-            <span>React.js</span>
-            <span>Node.js</span>
-            <span>Express.js</span>
-            <span>MongoDB</span>
-            <span>Redux Toolkit</span>
-            <span>Tailwind CSS</span>
-          </div>
+      <p>
+        Designed and developed a modern business website to strengthen
+        brand visibility and showcase products online. Implemented a
+        mobile-first responsive interface with optimized performance,
+        accessibility, and cross-browser compatibility. Delivered a
+        professional user experience using clean UI design and structured
+        content presentation.
+      </p>
 
-          <div class="buttons">
-            <a
-              href="https://mern-ecommerce-pooja.vercel.app"
-              target="_blank"
-              class="btn live"
-            >
-              Live Demo
-            </a>
+      <div class="tech-title">Tech Stack</div>
 
-            <a
-              href="https://github.com/Pooja23494/mern-ecommerce"
-              target="_blank"
-              class="btn github"
-            >
-              GitHub
-            </a>
-          </div>
-        </div>
+      <div class="tech-stack">
+        <span>React.js</span>
+        <span>JavaScript</span>
+        <span>Tailwind CSS</span>
+        <span>React Router</span>
+        <span>Framer Motion</span>
+        <span>Swiper</span>
+        <span>EmailJS</span>
+      </div>
 
-      <footer>
-        © 2026 Pooja Patel • Front-End Developer • React.js Developer
-      </footer>
-    </div>
+      <div class="buttons">
+        <a
+          href="https://www.shivajigoodpoha.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn live"
+        >
+          🔗 Live Demo
+        </a>
+
+        <a
+          href="https://github.com/Pooja23494/Shivajigoodpoha"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn github"
+        >
+          💻 GitHub
+        </a>
+      </div>
+    </article>
+
+    <!-- QuickShow -->
+
+    <article class="card">
+      <div class="card-header">
+        <div class="project-icon">🎬</div>
+        <div class="project-number">PROJECT 03</div>
+      </div>
+
+      <h2>QuickShow – Movie Ticket Booking Platform</h2>
+
+      <p>
+        Developed a full-stack movie ticket booking platform with secure
+        user authentication and role-based access control. Implemented
+        movie browsing, seat selection, booking management, and Stripe
+        payment integration for seamless ticket reservations. Built a
+        responsive admin dashboard to manage movies, shows, users, and
+        bookings efficiently.
+      </p>
+
+      <div class="tech-title">Tech Stack</div>
+
+      <div class="tech-stack">
+        <span>React.js</span>
+        <span>Node.js</span>
+        <span>Express.js</span>
+        <span>MongoDB</span>
+        <span>Stripe</span>
+        <span>Tailwind CSS</span>
+      </div>
+
+      <div class="buttons">
+        <a
+          href="https://quickshow-omega-blush.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn live"
+        >
+          🔗 Live Demo
+        </a>
+
+        <a
+          href="https://github.com/Pooja23494/QuickShow"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn github"
+        >
+          💻 GitHub
+        </a>
+      </div>
+    </article>
+
+    <!-- MERN Ecommerce -->
+
+    <article class="card">
+      <div class="card-header">
+        <div class="project-icon">🛒</div>
+        <div class="project-number">PROJECT 04</div>
+      </div>
+
+      <h2>MERN E-Commerce Platform</h2>
+
+      <p>
+        Built a full-stack e-commerce application featuring JWT
+        authentication, product catalogue management, and order
+        processing. Developed shopping cart, checkout workflow, and Redux
+        Toolkit state management for an enhanced user experience. Created
+        an admin dashboard for managing products, categories, users, and
+        orders with responsive UI design.
+      </p>
+
+      <div class="tech-title">Tech Stack</div>
+
+      <div class="tech-stack">
+        <span>React.js</span>
+        <span>Node.js</span>
+        <span>Express.js</span>
+        <span>MongoDB</span>
+        <span>Redux Toolkit</span>
+        <span>Tailwind CSS</span>
+      </div>
+
+      <div class="buttons">
+        <a
+          href="https://mern-ecommerce-pooja.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn live"
+        >
+          🔗 Live Demo
+        </a>
+
+        <a
+          href="https://github.com/Pooja23494/mern-ecommerce"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn github"
+        >
+          💻 GitHub
+        </a>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- =========================
+       Footer
+  ========================== -->
+
+  <footer>
+    © 2026 <strong>Pooja Patel</strong> Web Designer • Front-End Developer •
+    React.js Developer
+  </footer>
+
+</main>
+```
+
   </body>
 </html>
